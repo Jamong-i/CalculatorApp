@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yf-zz-d3I">
-                                <rect key="frame" x="24" y="83" width="345" height="150"/>
+                                <rect key="frame" x="24" y="71" width="342" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="iSU-GV-Jea"/>
                                 </constraints>
@@ -25,17 +25,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWb-OH-cTH">
-                                <rect key="frame" x="24" y="257" width="345" height="537"/>
+                                <rect key="frame" x="24" y="340" width="342" height="541"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4pL-I7-Edg">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="444.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="440.66666666666669"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZXQ-j3-cod">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="82.666666666666671"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZXQ-j3-cod">
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="81.666666666666671"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47e-7P-QO4" customClass="RoundButton" customModule="Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="257.66666666666669" height="82.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="47e-7P-QO4" secondAttribute="height" id="GvH-ca-GLX"/>
+                                                        </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="AC">
                                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
@@ -48,15 +51,51 @@
                                                             <action selector="tapClearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yVD-qx-oXU"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uv-J6-dEX" customClass="RoundButton" customModule="Calculator" customModuleProvider="target">
+                                                        <rect key="frame" x="86.666666666666671" y="0.0" width="82.000000000000014" height="81.666666666666671"/>
+                                                        <color key="backgroundColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="7uv-J6-dEX" secondAttribute="height" id="9ju-6u-DBA"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="±">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="50"/>
+                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="tapPostiveToNegativeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GPr-nz-hVy"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YF-E5-w6L" customClass="RoundButton" customModule="Calculator" customModuleProvider="target">
+                                                        <rect key="frame" x="173.66666666666666" y="0.0" width="81.666666666666657" height="81.666666666666671"/>
+                                                        <color key="backgroundColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="7YF-E5-w6L" secondAttribute="height" id="B0T-Sg-fhm"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="%">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="tapPercentButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zIM-Lb-crz"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ra-it-1hj" customClass="RoundButton" customModule="Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="262.66666666666669" y="0.0" width="82.333333333333314" height="82.666666666666671"/>
+                                                        <rect key="frame" x="260.33333333333331" y="0.0" width="81.666666666666686" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.99607843137254903" green="0.6470588235294118" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="7ra-it-1hj" secondAttribute="height" id="Prc-YX-y80"/>
+                                                            <constraint firstAttribute="width" secondItem="7ra-it-1hj" secondAttribute="height" id="xjC-8F-Ssq"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="÷">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="50"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -69,17 +108,17 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tOR-R9-kHo">
-                                                <rect key="frame" x="0.0" y="90.666666666666686" width="345" height="82.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="89.666666666666686" width="342" height="82"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTW-Fa-dTl" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="82.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="82"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="QTW-Fa-dTl" secondAttribute="height" id="SZZ-kR-iCw"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="7">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -90,14 +129,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNc-Hr-b4H" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="87.666666666666686" y="0.0" width="82.333333333333314" height="82.333333333333329"/>
+                                                        <rect key="frame" x="86.666666666666671" y="0.0" width="82.000000000000014" height="82"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="sNc-Hr-b4H" secondAttribute="height" id="N2u-Pr-fcY"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="8">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -108,14 +147,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGz-E0-eNw" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="175" y="0.0" width="82.666666666666686" height="82.333333333333329"/>
+                                                        <rect key="frame" x="173.66666666666666" y="0.0" width="81.666666666666657" height="82"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="mGz-E0-eNw" secondAttribute="height" id="lGf-Xb-LWS"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="9">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -126,14 +165,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9K-ZH-2kA" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="262.66666666666669" y="0.0" width="82.333333333333314" height="82.333333333333329"/>
+                                                        <rect key="frame" x="260.33333333333331" y="0.0" width="81.666666666666686" height="82"/>
                                                         <color key="backgroundColor" red="0.99607843137254903" green="0.6470588235294118" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="A9K-ZH-2kA" secondAttribute="height" id="4OI-Gt-dcd"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="×">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="50"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -146,17 +185,17 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jAj-qW-30x">
-                                                <rect key="frame" x="0.0" y="181" width="345" height="82.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="179.66666666666663" width="342" height="81.666666666666686"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMd-q3-Aci" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="82.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="LMd-q3-Aci" secondAttribute="height" id="iEc-zD-wQZ"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="4">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -167,14 +206,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqR-vs-tVN" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="87.666666666666686" y="0.0" width="82.333333333333314" height="82.666666666666671"/>
+                                                        <rect key="frame" x="86.666666666666671" y="0.0" width="82.000000000000014" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="KqR-vs-tVN" secondAttribute="height" id="lVm-tg-ZRG"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="5">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -185,14 +224,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5R-ga-7nU" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="175" y="0.0" width="82.666666666666686" height="82.666666666666671"/>
+                                                        <rect key="frame" x="173.66666666666666" y="0.0" width="81.666666666666657" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="d5R-ga-7nU" secondAttribute="height" id="E6D-qK-lHH"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="6">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -203,14 +242,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR3-d7-ac9" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="262.66666666666669" y="0.0" width="82.333333333333314" height="82.666666666666671"/>
+                                                        <rect key="frame" x="260.33333333333331" y="0.0" width="81.666666666666686" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.99607843137254903" green="0.6470588235294118" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="lR3-d7-ac9" secondAttribute="height" id="uR6-I1-w1s"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="−">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="50"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -223,17 +262,17 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Kr-MA-MAM">
-                                                <rect key="frame" x="0.0" y="271.66666666666663" width="345" height="82.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="269.33333333333337" width="342" height="81.666666666666686"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pud-Wo-OvM" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="82.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="pud-Wo-OvM" secondAttribute="height" id="Qmd-Qz-T8C"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="1">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -244,14 +283,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKx-Oj-uJc" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="87.666666666666686" y="0.0" width="82.333333333333314" height="82.333333333333329"/>
+                                                        <rect key="frame" x="86.666666666666671" y="0.0" width="82.000000000000014" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="iKx-Oj-uJc" secondAttribute="height" id="Ssc-tT-Ibq"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="2">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -262,14 +301,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZr-yB-nKt" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="175" y="0.0" width="82.666666666666686" height="82.333333333333329"/>
+                                                        <rect key="frame" x="173.66666666666666" y="0.0" width="81.666666666666657" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="tZr-yB-nKt" secondAttribute="height" id="rPX-M1-fan"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="3">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -280,14 +319,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXd-em-0Lv" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="262.66666666666669" y="0.0" width="82.333333333333314" height="82.333333333333329"/>
+                                                        <rect key="frame" x="260.33333333333331" y="0.0" width="81.666666666666686" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.99607843137254903" green="0.6470588235294118" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="CXd-em-0Lv" secondAttribute="height" id="5pz-1T-xhV"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="+">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="50"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -300,14 +339,14 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WOi-I6-bZq">
-                                                <rect key="frame" x="0.0" y="362" width="345" height="82.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="359" width="342" height="81.666666666666686"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCy-7F-EAp" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="82.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="0">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -318,14 +357,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZC-le-rcH" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="175" y="0.0" width="82.666666666666686" height="82.666666666666671"/>
+                                                        <rect key="frame" x="173.66666666666666" y="0.0" width="81.666666666666657" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="2ZC-le-rcH" secondAttribute="height" id="r7b-h7-oXj"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title=".">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -336,14 +375,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wW5-LB-yu1" customClass="RoundButton" customModule="Calculator">
-                                                        <rect key="frame" x="262.66666666666669" y="0.0" width="82.333333333333314" height="82.666666666666671"/>
+                                                        <rect key="frame" x="260.33333333333331" y="0.0" width="81.666666666666686" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.99607843137254903" green="0.6470588235294118" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="wW5-LB-yu1" secondAttribute="height" id="FqQ-cP-Oap"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="=">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="50"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -359,7 +398,6 @@
                                         <constraints>
                                             <constraint firstItem="WOi-I6-bZq" firstAttribute="height" secondItem="ZXQ-j3-cod" secondAttribute="height" id="Vyw-Ws-Iqd"/>
                                             <constraint firstItem="7Kr-MA-MAM" firstAttribute="height" secondItem="ZXQ-j3-cod" secondAttribute="height" id="Yku-sY-WJS"/>
-                                            <constraint firstItem="47e-7P-QO4" firstAttribute="trailing" secondItem="mGz-E0-eNw" secondAttribute="trailing" id="c5e-Uz-Kg0"/>
                                             <constraint firstItem="jAj-qW-30x" firstAttribute="height" secondItem="ZXQ-j3-cod" secondAttribute="height" id="tbY-Nz-xK6"/>
                                             <constraint firstItem="pCy-7F-EAp" firstAttribute="trailing" secondItem="iKx-Oj-uJc" secondAttribute="trailing" id="tuw-LS-4rQ"/>
                                             <constraint firstItem="tOR-R9-kHo" firstAttribute="height" secondItem="ZXQ-j3-cod" secondAttribute="height" id="u72-AO-nhN"/>
@@ -379,12 +417,12 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sWb-OH-cTH" secondAttribute="trailing" constant="24" id="7Da-Py-WHf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sWb-OH-cTH" secondAttribute="bottom" constant="24" id="Cfh-z0-U52"/>
                             <constraint firstItem="sWb-OH-cTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="DZl-YC-wZf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4yf-zz-d3I" secondAttribute="trailing" constant="24" id="XB2-mJ-eqy"/>
-                            <constraint firstItem="sWb-OH-cTH" firstAttribute="top" secondItem="4yf-zz-d3I" secondAttribute="bottom" constant="24" id="ZpA-q9-2BQ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="sWb-OH-cTH" secondAttribute="bottom" constant="-71" id="fsb-hL-Ynf"/>
                             <constraint firstItem="4yf-zz-d3I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="mLd-hn-1DD"/>
                             <constraint firstItem="4yf-zz-d3I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="nrn-cH-RlF"/>
+                            <constraint firstItem="sWb-OH-cTH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="340" id="tO5-aM-CVb"/>
                         </constraints>
                     </view>
                     <connections>
@@ -398,55 +436,61 @@
     </scenes>
     <designables>
         <designable name="2ZC-le-rcH">
-            <size key="intrinsicContentSize" width="31.333333333333332" height="50"/>
+            <size key="intrinsicContentSize" width="33" height="56"/>
         </designable>
         <designable name="47e-7P-QO4">
             <size key="intrinsicContentSize" width="64.666666666666671" height="50"/>
         </designable>
+        <designable name="7YF-E5-w6L">
+            <size key="intrinsicContentSize" width="49.666666666666664" height="50"/>
+        </designable>
         <designable name="7ra-it-1hj">
-            <size key="intrinsicContentSize" width="43" height="50"/>
+            <size key="intrinsicContentSize" width="55.666666666666664" height="74"/>
+        </designable>
+        <designable name="7uv-J6-dEX">
+            <size key="intrinsicContentSize" width="55.666666666666664" height="74"/>
         </designable>
         <designable name="A9K-ZH-2kA">
-            <size key="intrinsicContentSize" width="43" height="50"/>
+            <size key="intrinsicContentSize" width="55.666666666666664" height="74"/>
         </designable>
         <designable name="CXd-em-0Lv">
-            <size key="intrinsicContentSize" width="43" height="50"/>
+            <size key="intrinsicContentSize" width="55.666666666666664" height="74"/>
         </designable>
         <designable name="KqR-vs-tVN">
-            <size key="intrinsicContentSize" width="42.666666666666664" height="50"/>
+            <size key="intrinsicContentSize" width="45.666666666666664" height="56"/>
         </designable>
         <designable name="LMd-q3-Aci">
-            <size key="intrinsicContentSize" width="43.333333333333336" height="50"/>
+            <size key="intrinsicContentSize" width="46.333333333333336" height="56"/>
         </designable>
         <designable name="QTW-Fa-dTl">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="50"/>
+            <size key="intrinsicContentSize" width="44" height="56"/>
         </designable>
         <designable name="d5R-ga-7nU">
-            <size key="intrinsicContentSize" width="43.333333333333336" height="50"/>
+            <size key="intrinsicContentSize" width="46.666666666666664" height="56"/>
         </designable>
         <designable name="iKx-Oj-uJc">
-            <size key="intrinsicContentSize" width="42" height="50"/>
+            <size key="intrinsicContentSize" width="44.666666666666664" height="56"/>
         </designable>
         <designable name="lR3-d7-ac9">
-            <size key="intrinsicContentSize" width="43" height="50"/>
+            <size key="intrinsicContentSize" width="55.666666666666664" height="74"/>
         </designable>
         <designable name="mGz-E0-eNw">
-            <size key="intrinsicContentSize" width="43.333333333333336" height="50"/>
+            <size key="intrinsicContentSize" width="46.666666666666664" height="56"/>
         </designable>
         <designable name="pCy-7F-EAp">
-            <size key="intrinsicContentSize" width="43.333333333333336" height="50"/>
+            <size key="intrinsicContentSize" width="46.333333333333336" height="56"/>
         </designable>
         <designable name="pud-Wo-OvM">
-            <size key="intrinsicContentSize" width="38.333333333333336" height="50"/>
+            <size key="intrinsicContentSize" width="40.666666666666664" height="56"/>
         </designable>
         <designable name="sNc-Hr-b4H">
-            <size key="intrinsicContentSize" width="43" height="50"/>
+            <size key="intrinsicContentSize" width="46" height="56"/>
         </designable>
         <designable name="tZr-yB-nKt">
-            <size key="intrinsicContentSize" width="42.666666666666664" height="50"/>
+            <size key="intrinsicContentSize" width="45.666666666666664" height="56"/>
         </designable>
         <designable name="wW5-LB-yu1">
-            <size key="intrinsicContentSize" width="43" height="50"/>
+            <size key="intrinsicContentSize" width="55.666666666666664" height="74"/>
         </designable>
     </designables>
 </document>
